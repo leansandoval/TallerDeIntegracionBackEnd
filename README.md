@@ -7,7 +7,7 @@
 * **Año**: 2024
 * **Grupo**: 1
 
-## Trayecto - Infraestructura
+## Trayecto - Gestión y Complementarias
 
 * **Año académico**: Segundo Año - Segundo Cuatrimestre
 * **Responsable / Jefe de catedra**: Eribe, Roberto
@@ -29,7 +29,7 @@
 
 ## Integrantes
 | DNI | Apellido/s | Nombre/s |
-|--|--|
+|--|--|--|
 | 40.137.650 | Corrales | Mauro Exequiel |
 | 44.834.085 | Justiniano | Maximo |
 | 37.276.705 | Pompeo | Nicolas Ruben |
