@@ -10,7 +10,6 @@ public class LineaDeVentaId implements Serializable {
 	}
 
 	public LineaDeVentaId(Integer ventaID, Integer nroLinea) {
-		// super();
 		this.ventaID = ventaID;
 		this.nroLinea = nroLinea;
 	}
@@ -55,5 +54,5 @@ public class LineaDeVentaId implements Serializable {
 	public String toString() {
 		return "LineaDeVentaId [ventaID=" + ventaID + ", nroLinea=" + nroLinea + "]";
 	}
-
+	
 }

@@ -18,32 +18,30 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
-@Table(name = "venta")
+@Table(name = "TBL_VENTA")
 public class Venta {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
+    @Column(name = "ID", nullable = false)
     private Integer id;
 
-    @Column(name = "fecha")
+    @Column(name = "FECHA")
     @Temporal(TemporalType.TIMESTAMP)
     private Date fecha;
 
-    @Column(name = "cliente", length = 200)
+    @Column(name = "CLIENTE", length = 200)
     private String cliente;
 
-    @Column(name = "total", precision = 15, scale = 2)
+    @Column(name = "TOTAL", precision = 15, scale = 2)
     private BigDecimal total;
 
-    @Column(name = "rechazada")
+    @Column(name = "RECHAZADA")
     private Boolean rechazada;
 
-    // @OneToMany(mappedBy = "venta", cascade = CascadeType.ALL, orphanRemoval =
-    // true)
-    // private List<LineaDeVenta> lineasDeVenta;
-    //
-    // Getters and Setters
+    @OneToMany(mappedBy = "venta", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<LineaDeVenta> productos;
+
     public Integer getId() {
         return id;
     }
@@ -84,11 +82,4 @@ public class Venta {
         this.rechazada = rechazada;
     }
 
-    // public List<LineaDeVenta> getLineasDeVenta() {
-    // return lineasDeVenta;
-    // }
-    //
-    // public void setLineasDeVenta(List<LineaDeVenta> lineasDeVenta) {
-    // this.lineasDeVenta = lineasDeVenta;
-    // }
 }

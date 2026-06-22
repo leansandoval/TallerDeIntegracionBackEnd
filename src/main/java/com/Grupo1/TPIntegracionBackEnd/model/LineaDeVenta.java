@@ -5,7 +5,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.IdClass;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
@@ -17,49 +16,33 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
-@Table(name = "lineadeventa")
-// @IdClass(LineaDeVentaId.class)//Para solucionar la serializacion de la clave
-// compuesta...
+@Table(name = "TBL_LINEA_DE_VENTA")
 public class LineaDeVenta {
 
-    /**
-     * 
-     */
     private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
+    @Column(name = "ID", nullable = false)
     private Integer id;
 
-    // @Id
-    // @Column(name = "ventaID", nullable = false)
-    // private Integer ventaID;
-    //
-    // @Id
-    // @Column(name = "nroLinea", nullable = false)
-    // private Integer nroLinea;
-
     @ManyToOne
-    @JoinColumn(name = "codigoProducto", referencedColumnName = "codigo")
+    @JoinColumn(name = "CODIGO_PRODUCTO", referencedColumnName = "CODIGO")
     private Producto producto;
 
-    @Column(name = "cantidad")
+    @Column(name = "CANTIDAD")
     private Integer cantidad;
 
-    @Column(name = "subtotal", precision = 15, scale = 2)
+    @Column(name = "SUBTOTAL", precision = 15, scale = 2)
     private BigDecimal subtotal;
 
-    @Column(name = "precioUnitario", precision = 15, scale = 2)
+    @Column(name = "PRECIO_UNITARIO", precision = 15, scale = 2)
     private BigDecimal precioUnitario;
 
     @ManyToOne
-    @JoinColumn(name = "ventaID")
-    // @JsonBackReference
+    @JoinColumn(name = "ID_VENTA")
     @JsonIgnore
     private Venta venta;
-
-    // Getters and Setters
 
     public Integer getId() {
         return id;
@@ -108,4 +91,5 @@ public class LineaDeVenta {
     public void setVenta(Venta venta) {
         this.venta = venta;
     }
+    
 }

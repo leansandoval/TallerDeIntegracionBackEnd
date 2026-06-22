@@ -8,26 +8,25 @@ import jakarta.persistence.Table;
 import java.math.BigDecimal;
 
 @Entity
-@Table(name = "producto")
+@Table(name = "TBL_PRODUCTO")
 public class Producto {
 
     @Id
-    @Column(name = "codigo", nullable = false, length = 20)
+    @Column(name = "CODIGO", nullable = false, length = 20)
     private String codigo;
 
-    @Column(name = "descripcion", length = 100)
+    @Column(name = "DESCRIPCION", length = 100)
     private String descripcion;
 
-    @Column(name = "stock")
+    @Column(name = "STOCK")
     private Integer stock;
 
-    @Column(name = "activo")
+    @Column(name = "ACTIVO")
     private Boolean activo;
 
-    @Column(name = "precio", precision = 15, scale = 2)
+    @Column(name = "PRECIO", precision = 15, scale = 2)
     private BigDecimal precio;
 
-    // Getters and Setters
     public String getCodigo() {
         return codigo;
     }

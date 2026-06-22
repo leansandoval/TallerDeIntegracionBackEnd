@@ -1,5 +1,6 @@
 package com.Grupo1.TPIntegracionBackEnd.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -7,17 +8,22 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "usuario")
+@Table(name = "TBL_USUARIO")
 public class Usuario {
+	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ID")
+    private Long id;
 
-	private String username;
+    @Column(name = "USERNAME", length = 100)
+    private String username;
 
-	private String password;
+    @Column(name = "PASSWORD", length = 255)
+    private String password;
 
-	private String rol;
+    @Column(name = "ROL", length = 50)
+    private String rol;
 
 	public String getUsername() {
 		return username;
@@ -43,5 +49,4 @@ public class Usuario {
 		this.rol = rol;
 	}
 
-	// Getters y setters
 }
