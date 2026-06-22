@@ -25,30 +25,30 @@ public class VentaController {
 
     @Autowired
     private VentaService ventaService;
-    
+
     @GetMapping
     public List<Venta> getAllVentas() {
         return ventaService.getAllVentas();
     }
-    
+
     @GetMapping("/{id}")
-    public ResponseEntity<Venta>  getVenta(@PathVariable Integer id) {
-           return ventaService.getVentaById(id)
+    public ResponseEntity<Venta> getVenta(@PathVariable Integer id) {
+        return ventaService.getVentaById(id)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }
-    
+
     @PostMapping
     public ResponseEntity<Venta> createVenta(@RequestBody Venta venta) {
-    	
-        Venta nuevavendta= ventaService.saveVenta(venta);
-	    return ResponseEntity.status(HttpStatus.CREATED).body(nuevavendta);
+
+        Venta nuevavendta = ventaService.saveVenta(venta);
+        return ResponseEntity.status(HttpStatus.CREATED).body(nuevavendta);
     }
-    
+
     @GetMapping("/reportes")
     public List<Venta> getVentasByDateRange(
             @RequestParam("startDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate startDate,
             @RequestParam("endDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate endDate) {
-        return ventaService.getEntreFechas(startDate.atStartOfDay(), endDate.plusDays(1).atStartOfDay()); 
+        return ventaService.getEntreFechas(startDate.atStartOfDay(), endDate.plusDays(1).atStartOfDay());
     }
 }

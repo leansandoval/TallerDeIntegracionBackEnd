@@ -27,14 +27,15 @@ public class LineaDeVentaController {
 
     @Autowired
     private VentaService ventaService;
-    
+
     @GetMapping
     public List<LineaDeVenta> getAllLineasDeVenta() {
         return lineaDeVentaService.getAllLineasDeVenta();
     }
-    
+
     @GetMapping("/{ventaID}/{nroLinea}")
-    public ResponseEntity<LineaDeVenta> getLineaDeVentaById(@PathVariable Integer ventaID, @PathVariable Integer nroLinea) {
+    public ResponseEntity<LineaDeVenta> getLineaDeVentaById(@PathVariable Integer ventaID,
+            @PathVariable Integer nroLinea) {
         LineaDeVentaId id = new LineaDeVentaId(ventaID, nroLinea);
         LineaDeVenta lineaDeVenta = lineaDeVentaService.getLineaDeVentaById(id);
         if (lineaDeVenta != null) {
@@ -43,7 +44,7 @@ public class LineaDeVentaController {
             return ResponseEntity.notFound().build();
         }
     }
-    
+
     @DeleteMapping("/{ventaID}/{nroLinea}")
     public ResponseEntity<Void> deleteLineaDeVenta(@PathVariable Integer ventaID, @PathVariable Integer nroLinea) {
         LineaDeVentaId id = new LineaDeVentaId(ventaID, nroLinea);
@@ -52,28 +53,29 @@ public class LineaDeVentaController {
     }
 
     @PostMapping("/{ventaId}")
-    public ResponseEntity<LineaDeVenta> createLineaDeVenta(@PathVariable Integer ventaId, @RequestBody LineaDeVenta lineaDeVenta) {
-    	// Validar si la venta existe
+    public ResponseEntity<LineaDeVenta> createLineaDeVenta(@PathVariable Integer ventaId,
+            @RequestBody LineaDeVenta lineaDeVenta) {
+        // Validar si la venta existe
         Venta ventaOptional = ventaService.getVenta(ventaId);
-        if (ventaOptional==null) {
+        if (ventaOptional == null) {
             return ResponseEntity.badRequest().body(null);
         }
-    	
-    	Venta venta = new Venta();
-         venta.setId(ventaId);
-         lineaDeVenta.setVenta(venta);
-         LineaDeVenta savedLineaDeVenta = lineaDeVentaService.saveLineaDeVenta(lineaDeVenta);
-         return ResponseEntity.ok(savedLineaDeVenta);
+
+        Venta venta = new Venta();
+        venta.setId(ventaId);
+        lineaDeVenta.setVenta(venta);
+        LineaDeVenta savedLineaDeVenta = lineaDeVentaService.saveLineaDeVenta(lineaDeVenta);
+        return ResponseEntity.ok(savedLineaDeVenta);
     }
-    
+
     @GetMapping("/{ventaId}")
-    public ResponseEntity<List<LineaDeVenta> > createLineaDeVenta(@PathVariable Integer ventaId) {
-           List<LineaDeVenta> lineaDeVenta = lineaDeVentaService.getLineaDeVentaByVentaId(ventaId);
-           if (lineaDeVenta != null) {
-               return ResponseEntity.ok(lineaDeVenta);
-           } else {
-               return ResponseEntity.notFound().build();
-           }
+    public ResponseEntity<List<LineaDeVenta>> createLineaDeVenta(@PathVariable Integer ventaId) {
+        List<LineaDeVenta> lineaDeVenta = lineaDeVentaService.getLineaDeVentaByVentaId(ventaId);
+        if (lineaDeVenta != null) {
+            return ResponseEntity.ok(lineaDeVenta);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
     }
-    
+
 }

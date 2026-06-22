@@ -1,6 +1,5 @@
 package com.Grupo1.TPIntegracionBackEnd.model;
 
-
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -40,9 +39,10 @@ public class Venta {
     @Column(name = "rechazada")
     private Boolean rechazada;
 
-//    @OneToMany(mappedBy = "venta", cascade = CascadeType.ALL, orphanRemoval = true)
-//    private List<LineaDeVenta> lineasDeVenta;
-//    
+    // @OneToMany(mappedBy = "venta", cascade = CascadeType.ALL, orphanRemoval =
+    // true)
+    // private List<LineaDeVenta> lineasDeVenta;
+    //
     // Getters and Setters
     public Integer getId() {
         return id;
@@ -84,12 +84,11 @@ public class Venta {
         this.rechazada = rechazada;
     }
 
-//    public List<LineaDeVenta> getLineasDeVenta() {
-//        return lineasDeVenta;
-//    }
-//
-//    public void setLineasDeVenta(List<LineaDeVenta> lineasDeVenta) {
-//        this.lineasDeVenta = lineasDeVenta;
-//    }
+    // public List<LineaDeVenta> getLineasDeVenta() {
+    // return lineasDeVenta;
+    // }
+    //
+    // public void setLineasDeVenta(List<LineaDeVenta> lineasDeVenta) {
+    // this.lineasDeVenta = lineasDeVenta;
+    // }
 }
-

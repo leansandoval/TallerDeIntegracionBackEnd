@@ -23,44 +23,41 @@ import jakarta.persistence.criteria.Root;
 @Service
 public class LineaDeVentaService {
 
-	   @Autowired
-	    private LineaDeVentaRepository lineaDeVentaRepository;
+	@Autowired
+	private LineaDeVentaRepository lineaDeVentaRepository;
 
-	   
-	   @PersistenceContext
-	    private EntityManager entityManager;
-	   
-	    public List<LineaDeVenta> getAllLineasDeVenta() {
-	        return lineaDeVentaRepository.findAll();
-	    }
-	    
-	    public LineaDeVenta getLineaDeVentaById(LineaDeVentaId id) {
-	        return lineaDeVentaRepository.findById(id).orElse(null);
-	    }
-	    
-	    public void deleteLineaDeVenta(LineaDeVentaId id) {
-	    	lineaDeVentaRepository.deleteById(id);	    }
+	@PersistenceContext
+	private EntityManager entityManager;
 
-	    public LineaDeVenta saveLineaDeVenta(LineaDeVenta lineaDeVenta) {
-//	    	 if (lineaDeVenta.getVentaID() == null || lineaDeVenta.getNroLinea()==null) {
-//	    		 lineaDeVenta.setNroLinea(10);
-//	    		 lineaDeVenta.setVentaID(10);
-//	         }
-	        return lineaDeVentaRepository.save(lineaDeVenta);
-	    }
-	    private UUID generateUniqueCode() {
-	        return UUID.randomUUID();
-	    }
+	public List<LineaDeVenta> getAllLineasDeVenta() {
+		return lineaDeVentaRepository.findAll();
+	}
 
-		public List<LineaDeVenta> getLineaDeVentaByVentaId(Integer ventaId) {
-			List<LineaDeVenta> Lineas = new ArrayList<>();
-			 String sql = "SELECT * FROM lineadeventa WHERE ventaid = :ventaID";
-		        try {
-					return (List<LineaDeVenta>) entityManager.createNativeQuery(sql, LineaDeVenta.class)
-		                                .setParameter("ventaID", ventaId)
-		                                .getResultList();
-		        } catch (NoResultException e) {
-		            return Lineas;
-		        }
+	public LineaDeVenta getLineaDeVentaById(LineaDeVentaId id) {
+		return lineaDeVentaRepository.findById(id).orElse(null);
+	}
+
+	public void deleteLineaDeVenta(LineaDeVentaId id) {
+		lineaDeVentaRepository.deleteById(id);
+	}
+
+	public LineaDeVenta saveLineaDeVenta(LineaDeVenta lineaDeVenta) {
+		return lineaDeVentaRepository.save(lineaDeVenta);
+	}
+
+	private UUID generateUniqueCode() {
+		return UUID.randomUUID();
+	}
+
+	public List<LineaDeVenta> getLineaDeVentaByVentaId(Integer ventaId) {
+		List<LineaDeVenta> Lineas = new ArrayList<>();
+		String sql = "SELECT * FROM lineadeventa WHERE ventaid = :ventaID";
+		try {
+			return (List<LineaDeVenta>) entityManager.createNativeQuery(sql, LineaDeVenta.class)
+					.setParameter("ventaID", ventaId)
+					.getResultList();
+		} catch (NoResultException e) {
+			return Lineas;
 		}
+	}
 }

@@ -16,7 +16,7 @@ import com.Grupo1.TPIntegracionBackEnd.service.*;
 public class UsuarioController {
 
     @Autowired
-    private UsuarioService  service;
+    private UsuarioService service;
 
     // Endpoint usando Criteria API
     @PostMapping("/login/criteria")

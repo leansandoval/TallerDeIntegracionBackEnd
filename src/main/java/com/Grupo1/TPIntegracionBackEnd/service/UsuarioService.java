@@ -28,11 +28,11 @@ public class UsuarioService {
         CriteriaBuilder cb = entityManager.getCriteriaBuilder();
         CriteriaQuery<Usuario> query = cb.createQuery(Usuario.class);
         Root<Usuario> root = query.from(Usuario.class);
-        
+
         Predicate usernamePredicate = cb.equal(root.get("username"), username);
         Predicate passwordPredicate = cb.equal(root.get("password"), password);
         Predicate loginPredicate = cb.and(usernamePredicate, passwordPredicate);
-        
+
         query.select(root).where(loginPredicate);
         try {
             return entityManager.createQuery(query).getSingleResult();
@@ -46,9 +46,9 @@ public class UsuarioService {
         String jpql = "SELECT u FROM Usuario u WHERE u.username = :username AND u.password = :password";
         try {
             return entityManager.createQuery(jpql, Usuario.class)
-                                .setParameter("username", username)
-                                .setParameter("password", password)
-                                .getSingleResult();
+                    .setParameter("username", username)
+                    .setParameter("password", password)
+                    .getSingleResult();
         } catch (NoResultException e) {
             return null;
         }
@@ -59,9 +59,9 @@ public class UsuarioService {
         String sql = "SELECT * FROM usuario WHERE username = :username AND password = :password";
         try {
             return (Usuario) entityManager.createNativeQuery(sql, Usuario.class)
-                                .setParameter("username", username)
-                                .setParameter("password", password)
-                                .getSingleResult();
+                    .setParameter("username", username)
+                    .setParameter("password", password)
+                    .getSingleResult();
         } catch (NoResultException e) {
             return null;
         }

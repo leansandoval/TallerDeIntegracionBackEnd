@@ -17,15 +17,15 @@ import com.Grupo1.TPIntegracionBackEnd.repository.VentaRepository;
 public class VentaService {
 
 	@Autowired
-    private VentaRepository ventaRepository;
+	private VentaRepository ventaRepository;
 
 	public Venta getVenta(Integer idventa) {
-        return ventaRepository.getById(idventa);
-    }
-	
-    public List<Venta> getAllVentas() {
-        return ventaRepository.findAll();
-    }
+		return ventaRepository.getById(idventa);
+	}
+
+	public List<Venta> getAllVentas() {
+		return ventaRepository.findAll();
+	}
 
 	public Venta saveVenta(Venta venta) {
 		return ventaRepository.save(venta);
@@ -33,7 +33,7 @@ public class VentaService {
 
 	public List<Venta> getEntreFechas(LocalDateTime atStartOfDay, LocalDateTime atStartOfDay2) {
 		// TODO Auto-generated method stub
-		 return ventaRepository.findByFechaBetween(atStartOfDay, atStartOfDay2);
+		return ventaRepository.findByFechaBetween(atStartOfDay, atStartOfDay2);
 	}
 
 	public Optional<Venta> getVentaById(Integer codigo) {

@@ -18,34 +18,33 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "lineadeventa")
-//@IdClass(LineaDeVentaId.class)//Para solucionar la serializacion de la clave compuesta...
+// @IdClass(LineaDeVentaId.class)//Para solucionar la serializacion de la clave
+// compuesta...
 public class LineaDeVenta {
 
     /**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+     * 
+     */
+    private static final long serialVersionUID = 1L;
 
-	
-	  @Id
-	    @GeneratedValue(strategy = GenerationType.IDENTITY)
-	    @Column(name = "id", nullable = false)
-	    private Integer id;
-	  
-//	@Id
-//    @Column(name = "ventaID", nullable = false)
-//    private Integer ventaID;
-//
-//    @Id
-//    @Column(name = "nroLinea", nullable = false)
-//    private Integer nroLinea;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", nullable = false)
+    private Integer id;
 
-    @ManyToOne 
+    // @Id
+    // @Column(name = "ventaID", nullable = false)
+    // private Integer ventaID;
+    //
+    // @Id
+    // @Column(name = "nroLinea", nullable = false)
+    // private Integer nroLinea;
+
+    @ManyToOne
     @JoinColumn(name = "codigoProducto", referencedColumnName = "codigo")
     private Producto producto;
 
-
-	@Column(name = "cantidad")
+    @Column(name = "cantidad")
     private Integer cantidad;
 
     @Column(name = "subtotal", precision = 15, scale = 2)
@@ -56,20 +55,20 @@ public class LineaDeVenta {
 
     @ManyToOne
     @JoinColumn(name = "ventaID")
-//    @JsonBackReference
+    // @JsonBackReference
     @JsonIgnore
     private Venta venta;
 
     // Getters and Setters
 
     public Integer getId() {
-  		return id;
-  	}
+        return id;
+    }
 
-  	public void setId(Integer id) {
-  		this.id = id;
-  	}
-    
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
     public Producto getProducto() {
         return producto;
     }
