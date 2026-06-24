@@ -9,7 +9,5 @@ import com.Grupo1.TPIntegracionBackEnd.model.Venta;
 
 @Repository
 public interface VentaRepository extends JpaRepository<Venta, Integer> {
-
 	List<Venta> findByFechaBetween(LocalDateTime atStartOfDay, LocalDateTime atStartOfDay2);
-
 }

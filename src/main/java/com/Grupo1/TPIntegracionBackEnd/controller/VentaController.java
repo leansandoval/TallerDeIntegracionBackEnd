@@ -15,7 +15,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.Grupo1.TPIntegracionBackEnd.model.Producto;
+import com.Grupo1.TPIntegracionBackEnd.dto.CrearVentaRequest;
+import com.Grupo1.TPIntegracionBackEnd.dto.VentaResponse;
 import com.Grupo1.TPIntegracionBackEnd.model.Venta;
 import com.Grupo1.TPIntegracionBackEnd.service.VentaService;
 
@@ -39,10 +40,13 @@ public class VentaController {
     }
 
     @PostMapping
-    public ResponseEntity<Venta> createVenta(@RequestBody Venta venta) {
-
-        Venta nuevavendta = ventaService.saveVenta(venta);
-        return ResponseEntity.status(HttpStatus.CREATED).body(nuevavendta);
+    public ResponseEntity<?> createVenta(@RequestBody CrearVentaRequest venta) {
+        try {
+            VentaResponse nuevaVenta = ventaService.registrarVenta(venta);
+            return ResponseEntity.status(HttpStatus.CREATED).body(nuevaVenta);
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
     }
 
     @GetMapping("/reportes")

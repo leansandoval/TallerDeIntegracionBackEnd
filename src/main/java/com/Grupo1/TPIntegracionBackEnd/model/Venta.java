@@ -82,4 +82,12 @@ public class Venta {
         this.rechazada = rechazada;
     }
 
+    public List<LineaDeVenta> getProductos() {
+        return productos;
+    }
+
+    public void setProductos(List<LineaDeVenta> productos) {
+        this.productos = productos;
+    }
+
 }
