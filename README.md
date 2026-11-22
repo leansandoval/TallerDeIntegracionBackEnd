@@ -95,6 +95,12 @@ El proyecto sigue la arquitectura Modelo-Vista-Controlador (MVC) para mantener u
 * **Servicio**: Implementa la clase `UsuarioService` con la lógica de negocio y reglas del sistema.
 * **Controlador**: Define `UsuarioController` para atender y procesar las peticiones HTTP entrantes.
 
+<div align="center">
+  <img width="700" alt="Spring Boot con Arquitectura MVC" src="https://github.com/user-attachments/assets/ca14a98f-0c92-4d02-ab8e-530eeba91a6d" />
+  <br>
+  <sup><em>Spring Boot con Arquitectura MVC</em></sup>
+</div>
+
 ---
 
 <a id="circuito-controller-service-y-repository"></a>
