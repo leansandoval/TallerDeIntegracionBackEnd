@@ -1,4 +1,5 @@
 # Taller de Integración - BackEnd
+Back-End del Sistema de Control de Stock implementado con Springboot Java de la materia Taller de Integración (3680) - 1C 2024 - UNLaM.
 
 ## Información de la Asignatura
 * **Carrera**: Ingeniería en Informática
