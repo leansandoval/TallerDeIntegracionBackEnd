@@ -78,6 +78,12 @@
 ## 🚀 Descripción General
 Este proyecto corresponde a la aplicación Back-End del Sistema de Control de Stock, desarrollada con Java y Spring Boot para implementar una API REST robusta encargada de la gestión de usuarios, autenticación y persistencia de datos.
 
+<div align="center">
+  <img width="700" alt="¿Como funciona Spring Boot?" src="https://github.com/user-attachments/assets/79adca90-1804-4f77-9234-e68c66e0af44" />
+  <br>
+  <sup><em>¿Como funciona Spring Boot?</em></sup>
+</div>
+
 ---
 
 <a id="estructura-y-arquitectura-mvc"></a>
@@ -183,6 +189,16 @@ El proyecto utiliza las siguientes tecnologías y librerías principales:
 * **Spring Data JPA**: Abstracción para el manejo de persistencia de datos.
 * **Hibernate**: Motor ORM para el mapeo objeto-relacional.
 * **H2 Database**: Base de datos relacional en memoria para desarrollo y demostración.
+
+<div align="center">
+  <img width="700" alt="¿Qué es Hibernate en Java?" src="https://github.com/user-attachments/assets/ce9e9e37-c7e1-4d49-9f5e-e9646f52ff9c" />
+  <br>
+  <sup><em>¿Qué es Hibernate en Java?</em></sup>
+  <br><br>
+  <img width="700" alt="Flujo de Spring Data JPA hasta Hibernate" src="https://github.com/user-attachments/assets/f8f7f0e3-7568-47eb-9859-213c97fad0a7" />
+  <br>
+  <sup><em>Flujo de Spring Data JPA hasta Hibernate</em></sup>
+</div>
 
 ---
 
