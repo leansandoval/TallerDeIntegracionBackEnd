@@ -211,7 +211,7 @@ POST /api/login
 * `401 Unauthorized`: Nombre de usuario o contraseña incorrectos.
 
 <div align="center">
-  <img src="https://i.imgur.com/YvN37UJ.png" alt="Swagger de la API funcionando" width="550" />
+  <img width="700" alt="Swagger de la API funcionando" src="https://github.com/user-attachments/assets/cf52172b-aeb7-4569-84c8-4c5e3bc6f4c1" />
   <br>
   <sup><em>Prueba y documentación interactiva de la API REST mediante Swagger UI</em></sup>
 </div>
