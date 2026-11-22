@@ -1,121 +1,113 @@
-# Taller de Integración - BackEnd
-Back-End del Sistema de Control de Stock implementado con Springboot Java de la materia Taller de Integración (3680) - 1C 2024 - UNLaM.
+<div align="center">
+  <h1>⚙️ Taller de Integración - BackEnd</h1>
+  <p><em>Back-End del Sistema de Control de Stock implementado con Spring Boot y Java (3680) - 1C 2024 - UNLaM.</em></p>
 
-## Información de la Asignatura
+  <!-- Badges -->
+  <img src="https://img.shields.io/badge/Universidad-UNLaM-1F4F90?style=for-the-badge&logo=google-scholar&logoColor=white" alt="UNLaM" />
+  <img src="https://img.shields.io/badge/Año-2024-2EA043?style=for-the-badge" alt="2024" />
+  <img src="https://img.shields.io/badge/Lenguaje-Java-007396?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java" /><img src="https://img.shields.io/badge/-Spring_Boot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white" alt="Spring Boot" />
+  <img src="https://img.shields.io/badge/Grupo-1-7057D2?style=for-the-badge" alt="Grupo 1" />
+  <img src="https://img.shields.io/badge/Estado-Completado-blue?style=for-the-badge" alt="Completado" />
+</div>
+
+<br>
+
+## 📑 Índice
+- [Información de la Asignatura](#informacion-de-la-asignatura)
+- [Trayecto - Gestión y Complementarias](#trayecto)
+- [Docentes](#docentes)
+- [Integrantes](#integrantes)
+- [Descripción General](#descripcion-general)
+- [Estructura y Arquitectura MVC](#estructura-y-arquitectura-mvc)
+- [Circuito Controller, Service y Repository](#circuito-controller-service-y-repository)
+- [Dependencias](#dependencias)
+- [Ejecución y Uso](#ejecucion-y-uso)
+- [Comunicación Front-End y Back-End](#comunicacion-front-end-y-back-end)
+- [Contribución](#contribucion)
+- [Herramientas Utilizadas](#herramientas-utilizadas)
+- [Estructura del Proyecto](#estructura-del-proyecto)
+
+---
+
+🔗 **[Repositorio Oficial en GitHub](https://github.com/leansandoval/TallerDeIntegracionBackEnd)**
+
+---
+
+<a id="informacion-de-la-asignatura"></a>
+## ℹ️ Información de la Asignatura
 * **Carrera**: Ingeniería en Informática
 * **Asignatura**: Taller de Integración (3680)
 * **Cuatrimestre**: Primer Cuatrimestre
 * **Año**: 2024
 * **Grupo**: 1
 
-## Trayecto - Gestión y Complementarias
-
+<a id="trayecto"></a>
+## ⚙️ Trayecto - Gestión y Complementarias
 * **Año académico**: Segundo Año - Segundo Cuatrimestre
-* **Responsable / Jefe de catedra**: Eribe, Roberto
+* **Responsable / Jefe de cátedra**: Eribe, Roberto
 * **Carga horaria semanal**: 4 hs
 * **Carga horaria total**: 64 hs
 * **Modalidad**: Virtual
-* **Correlativas anteriores**
-    * Principios de Calidad de Software (3626)
-    * Introducción a la Gestión de Requisitos (3630)
-    * Introducción a Proyectos Informáticos (3632)
-    * Tópicos de Programación (3635)
-    * Bases de Datos (3636)
-    * Arquitectura de Computadoras (3638)
+* **Correlativas anteriores**:
+  * Principios de Calidad de Software (3626)
+  * Introducción a la Gestión de Requisitos (3630)
+  * Introducción a Proyectos Informáticos (3632)
+  * Tópicos de Programación (3635)
+  * Bases de Datos (3636)
+  * Arquitectura de Computadoras (3638)
 
-## Docentes
+<a id="docentes"></a>
+## 👨‍🏫 Docentes
 * Bucher, Mariano
 * Eribe, Roberto
 * Paker, Fernando
 
-## Integrantes
+<a id="integrantes"></a>
+## 👥 Integrantes
+<div align="center">
+
 | DNI | Apellido/s | Nombre/s |
-|--|--|--|
-| 40.137.650 | Corrales | Mauro Exequiel |
-| 44.834.085 | Justiniano | Maximo |
-| 37.276.705 | Pompeo | Nicolas Ruben |
-| 41.548.235 | Sandoval Vasquez | Juan Leandro |
-| 37.841.788 | Sullca | Willian Fernando |
+| :--: | :--: | :--: |
+| **40.137.650** | Corrales | Mauro Exequiel |
+| **44.834.085** | Justiniano | Maximo |
+| **37.276.705** | Pompeo | Nicolas Ruben |
+| **41.548.235** | Sandoval Vasquez | Juan Leandro |
+| **37.841.788** | Sullca | Willian Fernando |
 
-Este proyecto es una aplicación Java Spring Boot que implementa una API REST para manejar usuarios.
+</div>
 
-## Estructura del Proyecto
+---
 
-El proyecto sigue una estructura MVC (Modelo-Vista-Controlador), organizada de la siguiente manera:
+<a id="descripcion-general"></a>
+## 🚀 Descripción General
+Este proyecto corresponde a la aplicación Back-End del Sistema de Control de Stock, desarrollada con Java y Spring Boot para implementar una API REST robusta encargada de la gestión de usuarios, autenticación y persistencia de datos.
 
--   **Modelo**: Contiene la definición de la entidad `Usuario`, que representa los datos de los usuarios en la base de datos.
--   **Repositorio**: Define la interfaz `UsuarioRepository` para acceder a los datos de los usuarios en la base de datos.
--   **Servicio**: Contiene la clase `UsuarioService` que implementa la lógica de negocio relacionada con los usuarios.
--   **Controlador**: Contiene el `UsuarioController`, que maneja las peticiones relacionadas con los usuarios.
+---
 
-## Dependencias
+<a id="estructura-y-arquitectura-mvc"></a>
+## 🏗️ Estructura y Arquitectura MVC
+El proyecto sigue la arquitectura Modelo-Vista-Controlador (MVC) para mantener una separación clara de responsabilidades:
 
-El proyecto utiliza las siguientes dependencias principales:
+* **Modelo**: Define la entidad `Usuario` que representa la estructura de datos almacenada en la base de datos.
+* **Repositorio**: Define la interfaz `UsuarioRepository` para acceder y manipular los datos en el motor de persistencia.
+* **Servicio**: Implementa la clase `UsuarioService` con la lógica de negocio y reglas del sistema.
+* **Controlador**: Define `UsuarioController` para atender y procesar las peticiones HTTP entrantes.
 
--   Spring Boot
--   Spring Data JPA
--   Hibernate
--   H2 Database (para propósitos de demostración)
+---
 
-## Ejecución
+<a id="circuito-controller-service-y-repository"></a>
+## 🔄 Circuito de Controller, Service y Repository en Spring Boot
 
-Para ejecutar la aplicación, puedes usar el siguiente comando:
+El flujo de información sigue una arquitectura en capas ordenada:
 
-    `mvn spring-boot:run` 
+1. **Controller**: Maneja las solicitudes HTTP y las respuestas hacia el cliente.
+2. **Service**: Procesa y valida la lógica de negocio.
+3. **Repository**: Se comunica directamente con la base de datos mediante JPA.
 
-Esto iniciará la aplicación en un servidor embebido Tomcat en el puerto por defecto 8080.
+### 1. Controlador (Controller)
+El controlador recibe las peticiones del front-end y las delega al servicio correspondiente:
 
-## Uso
-
-Una vez que la aplicación esté en funcionamiento, puedes enviar peticiones HTTP a los endpoints definidos en el `UsuarioController` para realizar operaciones como iniciar sesión, crear, actualizar o eliminar usuarios.
-
-### Ejemplo de Endpoint
-
-#### Iniciar Sesión
-
-    `POST /api/login` 
-
-Parámetros de solicitud:
-
--   `username`: Nombre de usuario
--   `password`: Contraseña
-
-Respuesta:
-
--   200 OK: Usuario encontrado y autenticado correctamente.
--   401 Unauthorized: Nombre de usuario o contraseña incorrectos.
-![Swager del APi funcionado](https://imgur.com/a/YvN37UJ)
-## Contribución
-
-Si deseas contribuir a este proyecto, por favor sigue los siguientes pasos:
-
-1.  Haz un fork del repositorio.
-2.  Crea una rama (`git checkout -b feature/MyFeature`).
-3.  Realiza tus cambios y haz commit de ellos (`git commit -am 'Add some feature'`).
-4.  Haz push de la rama (`git push origin feature/MyFeature`).
-5.  Abre un Pull Request.
-
-¡Esperamos tus contribuciones!
-
-
-# Circuito de Controller, Service y Repository en Spring Boot
-Este proyecto sigue la arquitectura de capas para separar las preocupaciones y mantener un código limpio y mantenible. A continuación se detalla cómo se implementan y se relacionan los controladores, servicios y repositorios para gestionar los datos de usuarios.
-
-## 1. Arquitectura de Capas
-El flujo de datos sigue esta estructura:
-
-1. **Controller**: Maneja las solicitudes HTTP y las respuestas.
-
-1. **Service**: Contiene la lógica de negocio.
-
-1. **Repository**: Se comunica directamente con la base de datos.
-
-## 2. Controlador (Controller)
-El controlador maneja las solicitudes entrantes del front-end y las dirige al servicio correspondiente. Aquí tienes un ejemplo de un controlador de usuarios:
-
-java
-
-```
+```java
 @RestController
 @RequestMapping("/api/users")
 public class UserController {
@@ -136,12 +128,11 @@ public class UserController {
     }
 }
 ```
-## 3. Servicio (Service)
-El servicio contiene la lógica de negocio. Es el intermediario entre el controlador y el repositorio. Aquí tienes un ejemplo de un servicio de usuarios:
 
-java
+### 2. Servicio (Service)
+Actúa como intermediario entre el controlador y el repositorio, ejecutando la lógica operativa:
 
-```
+```java
 @Service
 public class UserService {
 
@@ -157,20 +148,21 @@ public class UserService {
     }
 }
 ```
-## 4. Repositorio (Repository)
-El repositorio se encarga de interactuar con la base de datos. Utiliza JPA para realizar operaciones CRUD. Aquí tienes un ejemplo de un repositorio de usuarios:
 
-```
+### 3. Repositorio (Repository)
+Interactúa directamente con la base de datos realizando operaciones CRUD mediante JPA:
+
+```java
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
     // Métodos de consulta personalizados si es necesario
 }
 ```
-## 5. Modelo (Model)
-El modelo representa la estructura de los datos en la base de datos. Aquí tienes un ejemplo de una entidad de usuario:
 
-java
-```
+### 4. Modelo (Model)
+Representa la estructura de entidades en la base de datos:
+
+```java
 @Entity
 public class User {
 
@@ -185,14 +177,59 @@ public class User {
     // Getters y setters
 }
 ```
-## 6. Comunicación entre Front-end y Back-end
-Para que el front-end pueda comunicarse con el back-end y obtener datos de usuarios, se deben seguir estos pasos:
 
-1. Solicitud HTTP desde el Front-end: El front-end envía una solicitud HTTP al controlador del back-end. Por ejemplo, una solicitud GET para obtener información de un usuario específico.
+---
 
-typescript
+<a id="dependencias"></a>
+## 📦 Dependencias
+El proyecto utiliza las siguientes tecnologías y librerías principales:
+* **Spring Boot**: Framework base para el desarrollo de la aplicación.
+* **Spring Data JPA**: Abstracción para el manejo de persistencia de datos.
+* **Hibernate**: Motor ORM para el mapeo objeto-relacional.
+* **H2 Database**: Base de datos relacional en memoria para desarrollo y demostración.
+
+---
+
+<a id="ejecucion-y-uso"></a>
+## 🛠️ Ejecución y Uso
+
+### Ejecutar la Aplicación
+Para iniciar el servidor embebido Tomcat en el puerto por defecto `8080`, ejecutar:
+
+```bash
+mvn spring-boot:run
 ```
-// Angular Service para llamar a la API
+
+### Ejemplo de Endpoint: Iniciar Sesión
+
+```http
+POST /api/login
+```
+
+**Parámetros de solicitud:**
+* `username`: Nombre de usuario
+* `password`: Contraseña
+
+**Respuestas HTTP:**
+* `200 OK`: Usuario encontrado y autenticado correctamente.
+* `401 Unauthorized`: Nombre de usuario o contraseña incorrectos.
+
+<div align="center">
+  <img src="https://i.imgur.com/YvN37UJ.png" alt="Swagger de la API funcionando" width="550" />
+  <br>
+  <sup><em>Prueba y documentación interactiva de la API REST mediante Swagger UI</em></sup>
+</div>
+
+---
+
+<a id="comunicacion-front-end-y-back-end"></a>
+## 🌐 Comunicación entre Front-End y Back-End
+
+Para integrar el cliente web (Angular) con la API REST de Spring Boot se sigue este flujo:
+
+1. **Solicitud HTTP desde el Front-End**:
+```typescript
+// Service en Angular para consumir la API REST
 @Injectable({
   providedIn: 'root'
 })
@@ -207,12 +244,59 @@ export class UserService {
   }
 }
 ```
-2. **Manejo de la solicitud en el Controlador**: El controlador recibe la solicitud, llama al servicio correspondiente y devuelve la respuesta al front-end.
+2. **Manejo en el Controlador**: El controlador recibe la petición, invoca al servicio y retorna el estado HTTP correspondiente.
+3. **Procesamiento en el Servicio**: Realiza las validaciones de negocio y consulta al repositorio.
+4. **Operación en la Base de Datos**: El repositorio ejecuta la consulta SQL/JPA requerida.
+5. **Respuesta al Cliente**: Los datos procesados retornan al front-end serializados en formato JSON.
 
-1. **Procesamiento en el Servicio**: El servicio realiza la lógica de negocio necesaria y llama al repositorio para obtener o almacenar datos.
+---
 
-1. **Interacción con la Base de Datos a través del Repositorio**: El repositorio realiza las operaciones CRUD necesarias en la base de datos.
+<a id="contribucion"></a>
+## 🤝 Contribución
 
-1. **Respuesta al Front-end:** El controlador recibe los datos del servicio y los envía de vuelta al front-end en forma de respuesta HTTP.
+Si deseas contribuir al desarrollo del proyecto:
 
+1. Haz un fork del repositorio.
+2. Crea una rama para tu funcionalidad (`git checkout -b feature/NuevaFuncionalidad`).
+3. Realiza tus cambios y confirma los commits (`git commit -am 'Add nueva funcionalidad'`).
+4. Realiza el push a la rama (`git push origin feature/NuevaFuncionalidad`).
+5. Abre un Pull Request para revisión.
 
+---
+
+<a id="herramientas-utilizadas"></a>
+## 🛠️ Herramientas Utilizadas
+* **Java (JDK 17)**: Lenguaje principal aplicado para construir la lógica y arquitectura Back-End.
+* **Spring Boot**: Framework utilizado para la estructuración de la API RESTful.
+* **Spring Data JPA / Hibernate**: Herramientas ORM para el acceso y gestión de persistencia de datos.
+* **H2 Database**: Base de datos relacional en memoria empleada para pruebas y ejecuciones rápidas.
+* **Apache Maven**: Gestor de dependencias y automatización de la compilación del proyecto.
+* **Swagger UI / OpenAPI**: Entorno para prueba interactiva y especificación de endpoints REST.
+* **Visual Studio Code / Eclipse / IntelliJ IDEA**: IDEs empleados para el desarrollo del proyecto.
+
+---
+
+<a id="estructura-del-proyecto"></a>
+## 📁 Estructura del Proyecto
+```text
+📦 TallerDeIntegracionBackEnd
+ ┣ 📂 src
+ ┃ ┣ 📂 main
+ ┃ ┃ ┣ 📂 java
+ ┃ ┃ ┃ ┗ 📂 com
+ ┃ ┃ ┃ ┗ 📂 unlam
+ ┃ ┃ ┃ ┗ 📂 stock
+ ┃ ┃ ┃ ┣ 📂 controller
+ ┃ ┃ ┃ ┃ ┗ 📜 UserController.java
+ ┃ ┃ ┃ ┣ 📂 model
+ ┃ ┃ ┃ ┃ ┗ 📜 User.java
+ ┃ ┃ ┃ ┣ 📂 repository
+ ┃ ┃ ┃ ┃ ┗ 📜 UserRepository.java
+ ┃ ┃ ┃ ┗ 📂 service
+ ┃ ┃ ┃ ┗ 📜 UserService.java
+ ┃ ┃ ┗ 📂 resources
+ ┃ ┃ ┗ 📜 application.properties
+ ┃ ┗ 📂 test
+ ┣ 📜 pom.xml
+ ┗ 📜 README.md
+```
